@@ -1,0 +1,10 @@
+<h1>Hamed's Personal Portfolio :)))</h1>
+{% for project in projects %}
+  {% if project.image %}
+    <img src="{{ project.image.url }}" height="300" width="300">
+  {% endif %}
+  <h3>{{ project.title }}</h3>
+  <h6>date : {{ project.date }}</h6>
+  <p>{{ project.discription }}</p>
+
+{% endfor %}
