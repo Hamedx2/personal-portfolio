@@ -9,10 +9,10 @@
 {% for post in posts %}
 
   {% if post.image %}
-    <img src="{{ post.image.url }}">
+    <img src="{{ post.image.url }}" height="300">
   {% endif %}
   <h3>{{ post.title }}</h3>
   <h5>{{ post.date }}</h5>
-  <p>{{ post.discription }}</p>
+  {{ post.discription|safe|truncatechars:300 }}
 
 {% endfor %}
