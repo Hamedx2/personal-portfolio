@@ -1,1 +1,18 @@
-Hi There
+<h1>This is My Blog</h1>
+<br>
+<br>
+
+<br>
+
+<br>
+
+{% for post in posts %}
+
+  {% if post.image %}
+    <img src="{{ post.image.url }}">
+  {% endif %}
+  <h3>{{ post.title }}</h3>
+  <h5>{{ post.date }}</h5>
+  <p>{{ post.discription }}</p>
+
+{% endfor %}
