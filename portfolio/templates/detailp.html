@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<img src="{{ project.image.url }}" height="300" width="500">
+
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ project.title }}</h1>
+
+<h5 class="text-center text-muted mb-5">{{ project.date|date:'F jS Y' }}</h5>
+
+<p>{{ project.discription|safe }}</p>
+<br><br><br><br><br>
+
+{% endblock %}
