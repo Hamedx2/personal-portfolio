@@ -1,20 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>Hamed's Personal Portfolio :)))</h1>
 <br>
 <br>
 <br>
+{% load static %}
+<img src="{% static 'portfolio/pro.jpg' %}" height="300" width="500">
+<br>
+<br><br>
+<b>My name is Hamed Teymouri </b><br>
+<h5>This was my first django project</h5><br><br><br>
 
-{% for project in projects %}
-  {% if project.image %}
-    <img src="{{ project.image.url }}" height="300" width="300">
-  {% endif %}
-  <a href="{{ project.link }}"><h3>{{ project.title }}</h3></a>
-  <h6>date : {{ project.date }}</h6>
-  <p>{{ project.discription }}</p>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
 
-{% endfor %}
+    {% if project.url %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.discription|safe|truncatechars:300 }}</p>
+
+  </div>
+  {% endfor %}
+</div>
 <br>
 <br>
 <br>
 <br>
 <br>
-<a href="{% url 'blog' %}"><h1>Visit my blog ....</h1></a>
+<a href="{% url 'blog:blog' %}"><h1>Visit my blog ....</h1></a>
+{% endblock %}

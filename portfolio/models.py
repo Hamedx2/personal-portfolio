@@ -4,7 +4,7 @@ class project(models.Model):
     title = models.CharField(max_length=200)
     discription = models.TextField()
     date = models.DateTimeField(blank=True)
-    image = models.ImageField(blank=True,upload_to='media/portfolio/')
+    image = models.ImageField(blank=True,upload_to='portfolio/')
     link = models.URLField(blank=True)
     def __str__(self):
         return self.title
