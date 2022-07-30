@@ -11,6 +11,7 @@
 <h5 class="text-center text-muted mb-5">{{ project.date|date:'F jS Y' }}</h5>
 
 <p>{{ project.discription|safe }}</p>
-<br><br><br><br><br>
-
+<br><br>
+<a class="btn btn-primary" href="{% url 'portfolio:home' %}" role="button">Back</a>
+<br><br><br><br><br><br>
 {% endblock %}

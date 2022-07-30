@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Hamed's Personal Portfolio :)))</h1>
+<br><br><br>
+<div class="p-3 mb-2 bg-secondary text-white">My Personal Portfolio</div>
 <br>
 <br>
 <br>
@@ -15,8 +16,8 @@
   {% for project in projects %}
   <div class="col-lg-4 col-md-6">
 
-    {% if project.url %}
-    <a href="{{ project.url }}">
+    {% if project.link %}
+    <a href="{{ project.link }}">
       <img src="{{ project.image.url }}" class="img-fluid mb-2">
     </a>
     {% else %}
@@ -32,7 +33,6 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<a href="{% url 'blog:blog' %}"><h1>Visit my blog ....</h1></a>
+<a class="btn btn-dark btn-lg" href="{% url 'blog:blog' %}" role="button">Visit My Blog</a>
+<br><br><br>
 {% endblock %}

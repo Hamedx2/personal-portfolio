@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>This is My Blog</h1>
+<br><br>
+<div class="p-3 mb-2 bg-dark text-white"><h1>My Blog</h1></div>
 <br>
 <br>
 
@@ -16,8 +17,8 @@
   <h3>{{ post.title }}</h3><br>
   <h5>{{ post.date | date:'F jS Y'}}</h5><br>
   {{ post.discription|safe|truncatechars:300 }} <a href="{% url 'blog:detail' post.id %}">read more</a>
-  <br><br>
+  <br><br><br><br><br>
 {% endfor %}
 <br><br><br>
-<a href="{% url 'portfolio:home' %}">Back...</a>
+<a class="btn btn-primary" href="{% url 'portfolio:home' %}" role="button">back</a>
 {% endblock %}

@@ -3,11 +3,15 @@
 {% load static %}
 
 {% block content %}
+<br><br><br>
+<img src="{{ post.image.url }}">
 
 <h1 class="text-center mt-5" id="blogdetailtitle">{{ post.title }}</h1>
 
 <h5 class="text-center text-muted mb-5">{{ post.date|date:'F jS Y' }}</h5>
 
 <p>{{ post.discription|safe }}</p>
-
+<br><br>
+<a class="btn btn-primary" href="{% url 'blog:blog' %}" role="button">Back</a>
+<br><br><br><br><br>
 {% endblock %}
